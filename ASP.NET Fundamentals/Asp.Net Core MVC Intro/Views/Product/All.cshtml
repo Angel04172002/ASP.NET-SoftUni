@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MvcIntroDemo.Models.Product.ProductViewModel>
+
+@{
+    ViewData["Title"] = "All products";
+}
+
+
+<span>@ViewData["Error"]</span>
+
+
+<h2>@ViewBag.Title</h2>
+
+
+<div class="row">
+    <div class="col-5">
+        <div class="card" style="width: 18rem">
+            <div class="card-header">@ViewBag.Title</div>
+
+            <ul class="list-group list-group-flush">
+
+                @foreach(var product in Model)
+                {
+                    <li class="list-group-item">
+                        N.@product.Id: @product.Name - @product.Price lv.
+                    </li>
+                }
+
+            </ul>
+
+        </div>
+    </div>
+</div>
