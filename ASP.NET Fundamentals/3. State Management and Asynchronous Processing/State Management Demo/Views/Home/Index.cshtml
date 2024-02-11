@@ -1,0 +1,14 @@
+﻿@using System.Text
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome, @Encoding.UTF8.GetString(Context.Session.Get("Username") ?? new byte[] {})</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h2>Your shopping cart:</h2>
+    <ul>
+        <li>@Encoding.UTF8.GetString(Context.Session.Get("Product1Name") ?? new byte[] { })</li>
+        <li>@Encoding.UTF8.GetString(Context.Session.Get("Product2Name") ?? new byte[] { })</li>
+    </ul>
+</div>
